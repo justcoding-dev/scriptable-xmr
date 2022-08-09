@@ -4,9 +4,10 @@
 // Displays your current balance, hashrate and top workers 
 // Add your wallet address, that you are using in xmrig, as parameter
 
+// Expected input parameters: walletAddress
+const expectedInput="walletAddress"
 
-// Expected input parameters: |-separated list of strings
-// walletAddress (only parameter at the moment)
+// -------- BEGIN configuration section
 
 // Number of workers to display
 const maxWorkers = 3
@@ -18,8 +19,10 @@ const balanceLength = 7
 const statsFont = Font.mediumSystemFont(16)
 const workerFont = Font.lightSystemFont(13)
 
+// -------- END configuration section
+
+
 // Check the input parameter
-const expectedInput="walletAddress"
 let walletAddress
 let widgetInput = args.widgetParameter
 
@@ -151,7 +154,7 @@ async function createWidget(data) {
   headerText.font = Font.headline()
   headerText.centerAlignText()
   
-  list.addSpacer(3)
+  list.addSpacer(6)
   
   // Balance line
   let lineStack = list.addStack()
