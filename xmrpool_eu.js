@@ -186,7 +186,8 @@ async function createWidget(data) {
   
   // If there are more, unlisted workers, add a "..."
   if (workers.length > maxWorkers) {
-    list.addText("...").centerAlignText()
+    // list.addSpacer(-10)
+    // list.addText("...").centerAlignText()
   }
   
   return list
