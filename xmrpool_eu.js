@@ -14,9 +14,9 @@ const maxWorkers = 3
 // Length of the balance string
 const balanceLength = 7
 
-const statsFontSize = 16
-
-const workerFontSize = 13
+// Font definitions
+const statsFont = Font.mediumSystemFont(16)
+const workerFont = Font.lightSystemFont(13)
 
 // Check the input parameter
 const expectedInput="walletAddress"
@@ -122,16 +122,16 @@ function addWorker(list, worker) {
     list.addSpacer(1)
     let wStack = list.addStack()
     wStack.addSpacer(5)
-    wStack.addText(worker.workerId.slice(0,15)).font = Font.lightSystemFont(workerFontSize)
+    wStack.addText(worker.workerId.slice(0,15)).font = workerFont
     wStack.addSpacer()
-    wStack.addText(hashrate(worker)).font = Font.lightSystemFont(workerFontSize)
+    wStack.addText(hashrate(worker)).font = workerFont
 
 }
 
 async function createWidget(data) {
 
   const list = new ListWidget()
-  list.setPadding(0, 2, 2, 2)
+  list.setPadding(4, 2, 4, 2)
 
   if (data.error) {
     log("data error")
@@ -155,25 +155,25 @@ async function createWidget(data) {
   
   // Balance line
   let lineStack = list.addStack()
-  lineStack.addText("Balance:").font = Font.mediumSystemFont(statsFontSize)
+  lineStack.addText("Balance:").font = statsFont
   lineStack.addSpacer()
-  lineStack.addText(formatBalance(stats.balance, balanceLength)).font = Font.mediumSystemFont(statsFontSize)
+  lineStack.addText(formatBalance(stats.balance, balanceLength)).font = statsFont
   
   list.addSpacer(1)
   
   // Hashrate line
   let rateStack = list.addStack()
-  rateStack.addText("Rate:").font = Font.mediumSystemFont(statsFontSize)
+  rateStack.addText("Rate:").font = statsFont
   rateStack.addSpacer()
-  let rateText = rateStack.addText(stats.hashrate).font = Font.mediumSystemFont(statsFontSize)
+  let rateText = rateStack.addText(stats.hashrate).font = statsFont
 
   list.addSpacer(1)
 
   // # Workers line
   let workerStack = list.addStack()
-  workerStack.addText("Workers:").font = Font.mediumSystemFont(statsFontSize)
+  workerStack.addText("Workers:").font = statsFont
   workerStack.addSpacer()
-  let workerText = workerStack.addText(workers.length.toString()).font = Font.mediumSystemFont(statsFontSize)
+  let workerText = workerStack.addText(workers.length.toString()).font = statsFont
 
 
   
