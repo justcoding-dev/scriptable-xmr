@@ -1,7 +1,7 @@
 # scriptable-xmrpool.eu
 Display statistics from xmrpool.eu in a widget
 
-# Configuration
+## Configuration
 
 Add your wallet address as parameter for the widget
 
