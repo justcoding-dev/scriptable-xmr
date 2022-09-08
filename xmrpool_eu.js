@@ -168,7 +168,10 @@ async function createWidget(data) {
   let rateStack = list.addStack()
   rateStack.addText("Rate:").font = statsFont
   rateStack.addSpacer()
-  let rateText = rateStack.addText(stats.hashrate).font = statsFont
+  if (!stats.hashrate) {
+    stats.hashrate = "---"
+  }
+let rateText = rateStack.addText(stats.hashrate).font = statsFont
 
   list.addSpacer(1)
 
