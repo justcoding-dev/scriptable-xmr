@@ -19,7 +19,7 @@ Display hashrate (total and top workers) from a xmrig proxy.
 ### Configuration
 
 Set your proxy address, API key and hashrate column index as parameter for the script,
-e.g. *http://192.168.1.1:8088|MYVERYSCRETAPIKEY|2*
+e.g. __http://192.168.1.1:8088|MYVERYSCRETAPIKEY|2__
 
 The hashrate column index can be
 
